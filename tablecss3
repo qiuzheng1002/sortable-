@@ -1,0 +1,274 @@
+HTML　テクニック01
+
+<table>
+  <tr>
+    <th class="t_top">No.</th>
+    <th class="t_top">table title01</th>
+    <th class="t_top">table title02</th>
+  </tr>
+  <tr>
+    <td class="t_line01">01</td>
+    <td class="t_line01">textarea</td>
+    <td class="t_line01">textarea</td>
+  </tr>
+  <tr>
+    <td class="t_line02">02</td>
+    <td class="t_line02">textarea</td>
+    <td class="t_line02">textarea</td>
+  </tr>
+  <tr>
+    <td class="t_line01">03</td>
+    <td class="t_line01">textarea</td>
+    <td class="t_line01">textarea</td>
+  </tr>
+</table>
+CSS　テクニック01
+
+table {
+	border: #2D0F09 1px solid;
+	border-collapse: collapse;
+	font-size: 11px;
+	width: 100%;
+	color: #F6ECEF;	
+} 
+table th.t_top {
+	border: #A84673 1px dashed;
+	background-color: #35140C;
+	text-align: left;
+	padding: 10px;
+	font: bold;
+} 
+table td.t_line01 {
+	border: #A84673 1px dashed;
+	background-color: #601A32;
+	vertical-align: top;
+	text-align: left;
+	padding: 10px;
+}
+table td.t_line02 {
+	border: #A84673 1px dashed;
+	background-color: #752241;
+	vertical-align: top;
+	text-align: left;
+	padding: 10px;
+}
+
+
+HTML　テクニック02
+
+<table>
+  <tr>
+    <th class="t_top">No.</th>
+    <th class="t_top">table title01</th>
+    <th class="t_top">table title02</th>
+  </tr>
+  <tr>
+    <td class="t_line01">01</td>
+    <td class="t_line01">textarea</td>
+    <td class="t_line01">textarea</td>
+  </tr>
+  <tr>
+    <td class="t_line02">02</td>
+    <td class="t_line02">textarea</td>
+    <td class="t_line02">textarea</td>
+  </tr>
+  <tr>
+    <td class="t_line01">03</td>
+    <td class="t_line01">textarea</td>
+    <td class="t_line01">textarea</td>
+  </tr>
+</table>
+CSS　テクニック02
+
+table {
+	background-color: #ffffff;
+	border-top:#ffffff 3px double;
+	border-collapse: collapse;
+	font-size: 11px;
+	width: 100%;
+	color:#333333;
+} 
+table th.t_top {
+	border-bottom: #dcdddd 1px solid;
+	background-color: #efefef;
+	text-align: left;
+	padding: 10px;
+} 
+table td.t_line01 {
+	background-color: #fff;
+	text-align: left;
+	padding: 10px;
+	vertical-align: top;
+}
+table td.t_line02 {
+	background-color: #f7f8f8;
+	text-align: left;
+	padding: 10px;
+	vertical-align: top;
+}
+
+
+<table>
+02
+  <tbody>
+03
+    <tr>
+04
+      <th>順位</th>
+05
+      <th>国</th>
+06
+      <th>2010年推計人口</th>
+07
+    </tr>
+08
+    <tr>
+09
+      <td>1</td>
+10
+      <td>中華人民共和国</td>
+11
+      <td>1,341,335,152</td>
+12
+    </tr>
+13
+    <tr>
+14
+      <td>2</td>
+15
+      <td>インド</td>
+16
+      <td>1,224,514,327</td>
+17
+    </tr>
+18
+    <tr>
+19
+      <td>10</td>
+20
+      <td>日本</td>
+21
+      <td>126,535,920</td>
+22
+    </tr>
+23
+  </tbody>
+24
+</table>
+続いてCSSです。とりあえず全部載せて、後で個別に説明します。
+
+view sourceprint?
+01
+table {
+02
+  width: auto;
+03
+  border-spacing: 0;
+04
+  font-size:14px;
+05
+}
+06
+table th {
+07
+  color: #fff;
+08
+  padding: 8px 15px;
+09
+  background: #258;
+10
+  background:-moz-linear-gradient(rgba(34,85,136,0.7), rgba(34,85,136,0.9) 50%);
+11
+  background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34,85,136,0.7)), to(rgba(34,85,136,0.9)));
+12
+  font-weight: bold;
+13
+  border-left:1px solid #258;
+14
+  border-top:1px solid #258;
+15
+  border-bottom:1px solid #258;
+16
+  line-height: 120%;
+17
+  text-align: center;
+18
+  text-shadow:0 -1px 0 rgba(34,85,136,0.9);
+19
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+20
+}
+21
+table th:first-child {
+22
+  border-radius: 5px 0 0 0;
+23
+}
+24
+table th:last-child {
+25
+  border-radius:0 5px 0 0;
+26
+  border-right:1px solid #258;
+27
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
+28
+}
+29
+table tr td {
+30
+  padding: 8px 15px;
+31
+  border-bottom: 1px solid #84b2e0;
+32
+  border-left: 1px solid #84b2e0;
+33
+  text-align: center;
+34
+}
+35
+table tr td:last-child {
+36
+  border-right: 1px solid #84b2e0;
+37
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+38
+}
+39
+table tr {
+40
+  background: #fff;
+41
+}
+42
+table tr:nth-child(2n+1) {
+43
+  background: #f1f6fc;
+44
+}
+45
+table tr:last-child td {
+46
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+47
+}
+48
+table tr:last-child td:first-child {
+49
+  border-radius: 0 0 0 5px;
+50
+}
+51
+table tr:last-child td:last-child {
+52
+  border-radius: 0 0 5px 0;
+53
+}
+54
+table tr:hover {
+55
+  background: #bbd4ee;
+56
+  cursor:pointer;
+57
+}

@@ -1,0 +1,48 @@
+<html>
+ <head>
+　<title>表格内容的筛选</title>
+  <link type="text/css" rel="stylesheet" href="css/contains.css" />
+  <style type="text/css">
+table {
+  width: 50%;
+  border: 1px solid;
+  background-color: #8FBC8F;
+}
+thead tr th {
+  text-align: left;
+  border-bottom: 1px solid;
+}
+</style>
+  <script type="text/javascript" src="scripts/jquery-1.4.3.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#filterName').keyup(function(){
+        $('table tbody tr').hide()
+          .filter(":contains('" +($(this).val()) + "')").show();
+      }).keyup();//DOM加载完时，绑定事件完成之后立即触发
+    });
+  </script>
+ </head>
+ <body>
+   筛选<input type="text" id="filterName"/>
+  <table>
+    <thead>
+      <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>张三</td><td>男</td><td>浙江宁波</td></tr>
+      <tr><td>李四</td><td>女</td><td>浙江杭州</td></tr>
+      <tr><td>王五</td><td>男</td><td>湖南长沙</td></tr>
+      <tr><td>赵六</td><td>男</td><td>浙江温州</td></tr>
+      <tr><td>Rain</td><td>男</td><td>浙江杭州</td></tr>
+      <tr><td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
+      <tr><td>张八</td><td>男</td><td>浙江宁波</td></tr>
+      <tr><td>李逵</td><td>女</td><td>浙江杭州</td></tr>
+      <tr><td>王进</td><td>男</td><td>湖南长沙</td></tr>
+      <tr><td>赵凯</td><td>男</td><td>浙江温州</td></tr>
+      <tr><td>Rick</td><td>男</td><td>浙江杭州</td></tr>
+      <tr><td>Micle</td><td>女</td><td>浙江杭州</td></tr>
+    </tbody>
+  </table>
+ </body>
+</html>

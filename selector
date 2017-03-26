@@ -1,0 +1,42 @@
+  $(function () {
+            // 大カテゴリの変更イベントバインド
+            $('select[name="l_category"]').change(function () {
+                // 選択した親ID
+                var parent_id = $('select[name="l_category"]').val();
+
+                var count = $('select[name="m_category"]').children().length;
+                for (var i = 0; i < count; i++) {
+                    var m_category_op = $('select[name="m_category"] option:eq(' + i + ')');
+                    if (m_category_op.attr("parent") === parent_id || m_category_op.attr("parent") === "") {
+                        m_category_op.show();
+                    } else {
+                        m_category_op.hide();
+                    }
+                }
+            })
+
+            //初期設定用にロード時の親選択状態で1度イベント起動させとく
+            $('select[name="l_category"]').trigger('change');
+        });
+    </script>
+    <title>HierSelectテスト</title>
+</head>
+
+<body style="text-align: center;">
+
+    <p>大カテゴリ</p>
+    <select name="l_category">
+        <option value="">大カテゴリを選択してください</option>
+        <option value="1">大カテゴリ１</option>
+        <option value="2">大カテゴリ２</option>
+    </select>
+
+    <p>中カテゴリ</p>
+    <select name="m_category">
+        <option value=""　parent="">中カテゴリを選択してください</option>
+        <option value="1" parent="1">大カテゴリ１ー中カテゴリ１</option>
+        <option value="2" parent="1">大カテゴリ１ー中カテゴリ２</option>
+        <option value="3" parent="2">大カテゴリ２ー中カテゴリ１</option>
+        <option value="4" parent="2">大カテゴリ２ー中カテゴリ２</option>
+    </select>
+</body>
